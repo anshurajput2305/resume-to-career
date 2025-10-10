@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-python-multipart
-pdfminer.six
-python-docx
-
-keybert
-scikit-learn
-resume_token="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"

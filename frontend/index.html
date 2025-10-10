@@ -3,43 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Resume Job Matcher</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Resume Analyzer</title>
+  <script defer src="/frontend/script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9fafb;
+      text-align: center;
+      padding: 50px;
+    }
+    #upload-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 450px;
+      margin: auto;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #0056b3; }
+    ul { text-align: left; margin-top: 20px; }
+    li { margin-bottom: 10px; }
+  </style>
 </head>
-<body class="min-h-screen relative overflow-hidden flex items-center justify-center">
-
-  <!-- Background: city skyline with blur + gradient overlay -->
-  <div class="absolute inset-0">
-    <img src="office.jpg" alt="City skyline" class="w-full h-full object-cover brightness-75">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-black/50"></div>
+<body>
+  <div id="upload-box">
+    <h2>📄 Upload Your Resume</h2>
+    <input type="file" id="resumeInput" accept=".pdf" />
+    <br><br>
+    <button onclick="uploadResume()">Analyze</button>
+    <ul id="resultList"></ul>
   </div>
-
-  <!-- Main Card -->
-  <div class="relative z-10 max-w-lg mx-auto bg-white bg-opacity-10 p-8 rounded-2xl shadow-2xl border-l-4 border-blue-600 backdrop-blur-md">
-
-    <h1 class="text-3xl font-bold text-gray-800 mb-2 text-center">🚀 AI Resume Job Matcher</h1>
-    <p class="text-gray-600 text-center mb-6">Upload your resume and get the best matching jobs instantly.</p>
-
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
-      <input type="file" id="resumeInput" accept=".pdf,.docx" class="px-3 py-2 border rounded-lg text-gray-700">
-      <button onclick="uploadResume()" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all">
-        Upload Resume
-      </button>
-    </div>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-4">Recommended Jobs</h2>
-    <ul id="jobList" class="space-y-3">
-      <li class="text-gray-400 text-center">No results yet</li>
-    </ul>
-
-    <div class="mt-6 text-gray-700">
-      <p id="skills" class="mb-2"></p>
-      <p id="upskills"></p>
-    </div>
-  </div>
-
-  <!-- 🔥 Use the updated JS that calls FastAPI -->
-  <script src="script.js"></script>
 </body>
 </html>
