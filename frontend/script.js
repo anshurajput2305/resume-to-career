@@ -27,7 +27,7 @@ const recommended_jobs =
    // <-- add this new key
   [];
 
-
+    const live_jobs = data.live_jobs || [];
 
     // Show Extracted Skills
     const skillItem = document.createElement("li");
@@ -38,8 +38,19 @@ const recommended_jobs =
     const jobHeader = document.createElement("li");
     jobHeader.innerHTML = `<strong>💼 Recommended Jobs:</strong>`;
     resultList.appendChild(jobHeader);
-
-    if (recommended_jobs.length > 0) {
+ if (live_jobs.length > 0) {
+      live_jobs.forEach(job => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          • <a href="${job.link}" target="_blank">${job.title}</a>
+            — ${job.company || "Unknown Company"}
+            (${job.location || "Remote"})
+            ${job.salary ? `<em> - ${job.salary}</em>` : ""}
+        `;
+        resultList.appendChild(li);
+      });
+    }
+    else if (recommended_jobs.length > 0) {
       recommended_jobs.forEach(job => {
         const li = document.createElement("li");
         li.innerHTML = `• ${job}`;
