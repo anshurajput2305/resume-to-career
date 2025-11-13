@@ -67,3 +67,5 @@ const recommended_jobs =
     resultList.innerHTML = `<li>❌ Error analyzing resume. Please try again.</li>`;
   }
 }
+
+
