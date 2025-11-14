@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="min-h-screen bg-[url('/frontend/orange.jpg')] bg-cover bg-center bg-fixed flex flex-col text-gray-800">
+<body class="min-h-screen bg-[url('/frontend/new.jpg')] bg-cover bg-center bg-fixed flex flex-col text-gray-800">
 
   <!-- Navbar -->
   <header class="bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-50 mt-[30px] mx-[260px] rounded-3xl h-12">
@@ -37,7 +37,7 @@
         file:mr-4 file:rounded-full file:border-0 file:bg-orange-50 file:px-4 file:py-2
         file:text-sm file:font-semibold file:text-orange-700 hover:file:bg-orange-100" />
       <button onclick="uploadResume()"
-        class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md">
+        class="bg-orange-400 hover:bg-orange-500 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-200 shadow-md">
         Analyze
       </button>
       <ul id="resultList" class="mt-6 text-left text-gray-700"></ul>
@@ -55,6 +55,36 @@
       </ul>
     </div>
   </section>
+
+
+<!-- Recommended Jobs Section -->
+<section id="recommended-jobs" class="py-24 bg-white/80 backdrop-blur-md">
+  <div class="max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-orange-600 mb-10 text-center">
+      🔍 Recommended Jobs
+    </h2>
+
+    <p class="text-gray-700 text-center mb-8 max-w-2xl mx-auto">
+      Based on your resume analysis, here are the top job roles you might fit into.
+    </p>
+
+    <div id="jobsContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dynamic job cards will be inserted here using JS -->
+      <!-- Example static card (you can remove) -->
+      <div class="p-6 bg-white rounded-2xl shadow hover:shadow-xl transition">
+        <h3 class="text-lg font-semibold text-orange-600 mb-2">Frontend Developer</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          Match Score: 86%
+        </p>
+        <button class="bg-orange-400 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600">
+          View Jobs
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
   <!-- Demo Video Section -->
  <section id="demo" class="py-24 bg-white/90 backdrop-blur-lg">
