@@ -52,8 +52,9 @@ async function uploadResume() {
 
     // Helper to create a card element (returns DOM node)
     function createJobCard(job) {
-      const card = document.createElement("div");
-      card.className = "p-6 bg-white rounded-2xl shadow hover:shadow-xl transition flex flex-col justify-between";
+     const card = document.createElement("div");
+  card.className = "p-6 glass rounded-2xl shadow hover:shadow-xl transition flex flex-col justify-between";
+
 
       // Title (string or object)
       const title = document.createElement("h3");
@@ -63,7 +64,7 @@ async function uploadResume() {
 
       // Company/location/extra info
       const meta = document.createElement("p");
-      meta.className = "text-gray-700 text-sm mb-4";
+      meta.className = "text-gray-300 text-sm  mb-4";
       const parts = [];
       if (job.company) parts.push(job.company);
       if (job.location) parts.push(job.location);
@@ -75,7 +76,7 @@ async function uploadResume() {
       const score = job.score ?? job.match_score ?? job.match ?? null;
       if (score !== null && score !== undefined) {
         const scoreEl = document.createElement("p");
-        scoreEl.className = "text-sm mb-4";
+        scoreEl.className = " text-sm  mb-4";
         scoreEl.innerHTML = `<strong>Match:</strong> ${Math.round(Number(score))}%`;
         card.appendChild(scoreEl);
       }
