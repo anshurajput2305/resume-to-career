@@ -20,6 +20,8 @@ async function uploadResume() {
     if (!res.ok) throw new Error(`Server returned ${res.status}`);
     const data = await res.json();
 
+
+    localStorage.setItem("resume_text", data.resume_text);
     // reset results area
     resultList.innerHTML = "";
 
@@ -90,14 +92,23 @@ async function uploadResume() {
         a.href = job.link;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        a.className = "inline-block bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600";
+        a.className = "pointer-events-auto inline-block bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600";
         a.textContent = "View Job";
         btnWrap.appendChild(a);
       } else {
         const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "inline-block bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600";
-        btn.textContent = "Explore Similar";
+              btn.type = "button";
+              btn.className = "explore-job-btn inline-block bg-orange-500 text-white px-4 py-2 rounded-lg text-sm hover:bg-orange-600";
+              btn.textContent = "Explore Similar";
+              btn.dataset.title = job.title;
+
+
+
+ ///////////////////////////////////
+        btn.addEventListener("click", ()=>{
+          console.log("here")
+        })
+
         // optional: attach click to search or show details
         btnWrap.appendChild(btn);
       }

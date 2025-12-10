@@ -51,6 +51,18 @@
     /* tiny card hover lift */
     .lift { transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s; }
     .lift:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
+    
+#jobsContainer a,
+#jobsContainer button {
+  position: relative !important;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+
+#jobsContainer * {
+  pointer-events: auto !important;
+}
+
   </style>
 </head>
 
@@ -82,6 +94,33 @@
             <li><a href="#demo" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full">Demo</a></li>
             <li><a href="#how" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full">How it Works</a></li>
             <li><a href="#tips" class="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full">Tips</a></li>
+             <li class="relative group">
+
+  <!-- Main Button with Same Underline Effect -->
+  <li class="relative group">
+
+  <!-- ATS Tools Button (matching other navbar items) -->
+  <button
+    class="relative text-white-700 px-1
+           after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0
+           after:bg-orange-400 after:transition-all after:duration-300
+           hover:text-orange-500 hover:after:w-full">
+    ATS Tools ▾
+  </button>
+
+  <!-- Dropdown -->
+  <ul class="absolute hidden group-hover:block 
+             bg-white shadow-lg rounded-lg py-2 w-40 z-50">
+    <li>
+      <a href="/frontend/ats.html"
+         class="block px-4 py-2 text-black 
+                hover:bg-orange-100 hover:text-orange-600">
+        ATS Score
+      </a>
+    </li>
+  </ul>
+</li>
+
           </ul>
         </nav>
       </div>
@@ -136,14 +175,6 @@
   </div>
 </section>
 
-    <!-- Recommended Jobs Section -->
-    <!-- <section id="recommended-jobs" class="py-20">
-      <div class="max-w-5xl  mx-auto px-6">
-        <h2 class="text-3xl font-bold accent mb-8 text-center">🔍 Recommended Jobs</h2>
-        <p class="muted text-center mb-8 max-w-2xl mx-auto">Based on your resume analysis, here are the top job roles you might fit into.</p>
-        <div id="jobsContainer" class="grid sm:grid-cols-2  lg:grid-cols-3 gap-6"> -->
-          <!-- Dynamic job cards will be inserted here using JS -->
-        </div>
       </div>
     </section>
 
